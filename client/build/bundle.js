@@ -19936,6 +19936,9 @@
 	    var newBank = this.state.bank;
 	    var accountToHack = newBank.findAccountByOwnerName(name);
 	    var Rick = newBank.findAccountByOwnerName("Rick");
+	    if (accountToHack === null) {
+	      return;
+	    }
 	    Rick.amount += accountToHack.amount;
 	    accountToHack.amount = 0;
 	    accountToHack.hacked = true;
